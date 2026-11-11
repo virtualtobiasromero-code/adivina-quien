@@ -1,0 +1,210 @@
+        /* Declaración por Etiqueta*/
+body { /*Caracteristicas de la página*/
+  text-align: center; /*Contenido centrado (en el medio)*/
+  background:  /*Caracteristicas del fondo*/
+  linear-gradient(  /*Inicia un radiente lineal*/
+      90deg,  /*Rotación a 90 grados (para que, en vez que el gradiente vaya en vertical cambie a horizontal)*/
+      rgb(243, 227, 174) 1%,  /*Inicia el gradiente en un color amarillo claro ocupando un 1% del gradiente*/
+      transparent 5%,  /* El color anterior transiciona a ser transparente*/
+      transparent 95%,  /*Se mantine 100% transparente el color por alrededor del 90% restante del gradiente, para transitar al sigiente colorcuando termine de ocupar su espacio en el gradiente*/
+      rgb(243, 227, 174) 99%), /*Gradiente vuelve al color original ocupando el 1% del gradiente restante*/
+      url(../img/fondo.png); /*Se aplica una imagen por debajo del degradado, siendo capas de verlo cuando el degradado se vuelve transparente*/
+  background-color:#e6c24b; /*Color amarillento fuerte en el fondo de todo (detras de todos los objetos)*/
+  background-attachment: fixed;  /*Fondo matendra la misma posición todo el tiempo,viendose igual igual sin importar el desplazamiento de la página*/
+  background-position-x: center; /*Centra el fondo para encontrarse siempre en el centro horizontal de la pantalla del dispositivo (notable principalmente cuando se tiene una imagen que se repite en el background)*/
+}
+
+h1 {  /*Caracteristicas de los titulos*/
+  margin: 20px 20px; /*Espaciado vertical de 20 px, y uno horizontal de 20px*/
+  font-family: Broadway; /*Tipografia de la letra*/
+	font-size: 40px; /*Tamaño de las letras*/
+	color: #f9f6f6; /*Color de las letras*/
+}
+
+p { /*Caracteristicas de los textos*/
+  margin: 20px 100px;  /*Espaciado vertical de 20px y uno horizontal de 100px*/
+  font-family: Cooper; /*Tipografia de la letra*/
+	font-size: 30px; /*Tamaño de las letas*/
+	color: #f9f6f6; /*Color de las letras*/
+}
+
+img{  /*Caracteristicas de las imagenes*/
+  max-width: 250px; /*Anchura máxima permitida*/
+  max-height: 250px;  /*Altura máxima permitida*/
+  border-radius:  60%;  /*Teniendo en cuenta el total del objeto, genera un border circular en el margen del objeto, pudienndo elimitar contenido del objeto si se hace muy circular el borde*/
+}
+
+button {   /*Caracteristicas de los botones*/
+  background-color: green;  /*Color verde en el fondo de forma predeterminada*/
+  margin: 0px 10px; /*Espaciado vertical de 10px y uno horizontal de 10px*/
+  border-radius:  60%; /*Teniendo en cuenta el total del objeto, genera un border circular en el margen del objeto, pudienndo elimitar contenido del objeto si se hace muy circular el borde*/
+  box-shadow: -10px 10px 25px rgba(0, 0, 0, 1);  /*Sombra color negor del objeto desplazada 10px a la izquierda y 10px hacia abajo, contando con una opacacidad del 100% y tiene un radio de desenfoque de 25px*/
+  cursor:pointer;  /*Cambia el estado del estado mouse al encontrarse arriba suyo, en nuestro caso, al estado de mano señalando*/
+}
+
+        /*Declaración por Clase */
+.texto { /*Caracteristicas de las secciones que contengan texto*/
+  margin: 40px 100px;
+  padding: 20px;
+  background: rgba(50, 46, 46, 0.5);
+  border-radius: 10px;
+}
+
+.derechos, a{ /*Caracteristicas del texto "©2025 Grupo C16" */
+  font-family: Consolas, 'Courier New', monospace;
+  color:  white;
+  font-size: 16px;
+  margin: 10px 0px; 
+  text-shadow:
+      1px 1px 0 black,
+      -1px 1px 0 black,
+      1px -1px 0 black,
+      -1px -1px 0 black;
+}
+
+        /*Declaración por Acción*/
+button:hover {  /*Caracteristicas del boton cuando esta el mouse arriba */
+  background-color: rgb(23, 198, 23);
+}
+
+button:focus { /*Caracteristicas del boton cuando el mouse lo apreta */
+  background-color: rgb(113, 255, 25);
+}
+/* --- Panel de sesión y badge (movido desde index.php) --- */
+        /* --- Estilos del panel de sesión --- */
+        .panel-sesion {
+            position: fixed;
+            top: 14px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .saludo {
+            font-family: Consolas, 'Courier New', monospace;
+            color: #fff;
+            font-size: 15px;
+            text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+            margin: 0;
+        }
+
+        .btn-sesion {
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 7px 14px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform .15s, box-shadow .15s;
+            box-shadow: -4px 4px 12px rgba(0,0,0,.6);
+        }
+
+        .btn-sesion:hover { transform: translateY(-2px); }
+        .btn-sesion:active { transform: translateY(0); }
+
+        .btn-login {
+            background: linear-gradient(135deg, #e6b840, #ca8a04);
+            color: #1a1a1a;
+        }
+
+        .btn-registro {
+            background: linear-gradient(135deg, #22c55e, #15803d);
+            color: #fff;
+        }
+
+        .btn-logout {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            color: #fff;
+        }
+
+        /* --- Banner de victorias --- */
+        .victorias-badge {
+            display: inline-block;
+            background: rgba(230,184,64,.25);
+            border: 1px solid rgba(230,184,64,.5);
+            border-radius: 20px;
+            padding: 4px 14px;
+            color: #fde68a;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            text-shadow: none;
+        }
+    
+
+/* --- Botón "Cómo jugar" y su ventana --- */
+.btn-como-jugar {
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding: 12px 34px;
+    margin: 20px 10px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #6366f1, #4338ca);
+    text-shadow: 1px 1px 0 #000;
+    transition: transform .15s;
+}
+.btn-como-jugar:hover  { background: linear-gradient(135deg, #818cf8, #4f46e5); transform: translateY(-2px); }
+.btn-como-jugar:focus  { background: linear-gradient(135deg, #818cf8, #4f46e5); }
+
+.modal-ayuda {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.modal-ayuda.activo { display: flex; }
+
+.modal-ayuda-caja {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 28px 30px;
+    max-width: 620px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: left;
+    box-shadow: 0 20px 60px rgba(0,0,0,.7);
+    color: #e2e8f0;
+}
+.modal-ayuda-caja h2 {
+    margin: 0 0 14px;
+    text-align: center;
+    font-family: Broadway, Consolas, sans-serif;
+    font-size: 30px;
+    color: #fde68a;
+}
+.ayuda-contenido p, .ayuda-contenido li {
+    margin: 10px 0;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e2e8f0;
+}
+.ayuda-contenido ol { padding-left: 22px; margin: 10px 0; }
+.ayuda-contenido strong { color: #fde68a; }
+
+.btn-cerrar-ayuda {
+    display: block;
+    margin: 18px auto 0;
+    padding: 10px 28px;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #22c55e, #15803d);
+}

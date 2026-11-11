@@ -1,0 +1,222 @@
+/* Declaración por Etiqueta*/
+body { /*Caracteristicas de la página*/
+    text-align: center;
+    background: linear-gradient(
+        90deg, 
+      rgb(135, 250, 118) 2%,        
+        transparent 5%, 
+        transparent 95%,
+      rgb(135, 250, 118) 98%),
+        url(../img/fondo.png);
+    background-color:#4be64e;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
+
+h1 { /*Caracteristicas de los titulos*/
+    margin: 20px 10px;
+    font-family: Broadway;
+	  font-size: 40px;
+	  color: #f9f6f6;
+  }
+
+p { /*Caracteristicas de los textos*/
+    margin: 20px 10px;
+    font-family: Cooper;
+	  font-size: 30px;
+	  color: #f9f6f6;
+  }
+
+section { /*Caracteristicas de las secciones*/
+    margin: 20px 60px;
+    padding: 20px;
+    background: rgba(50, 46, 46, 0.5);
+    border-radius: 10px;
+  }
+
+/*Declaración por Clase */
+.contenedor { /*Caracteristicas de la dropzone de la seccion 'encabezado'*/
+    min-height: 200px;
+    background-color: rgb(230, 228, 228);
+    border-radius: 27px;
+    box-shadow: inset 0 0 60px rgba(75, 93, 230, 1);
+  }
+
+.casilla{  /*Caracteristicas de la casa / casilla de cada personaje*/
+    max-width: 200px;
+     margin: 20px auto;
+}
+
+.cont_pieza{ /*Caracteristicas de los contenedores de la pieza*/
+    min-height: 100px ;
+    max-height: 100px;
+    border-radius:  30px;;
+    cursor: grab;
+  } 
+
+.arriba{ /*Caracteristicas especiales del contenedor de arriba para la pieza*/
+    background-color: rgb(75, 230, 78);
+    box-shadow: inset 0 0 60px rgb(182, 241, 183);
+}
+
+.abajo{ /*Caracteristicas especiales del contenedor de abajo para la pieza*/
+    background-color: rgb(72, 167, 244);
+    box-shadow: inset 0 0 60px rgb(207, 247, 247);
+}
+
+.cont_pers { /*Caracteristicas del contenedor de la imagen del personaje*/
+    max-height: 300px;
+    min-height: 300px;
+}
+
+.descartado {  /*Caracteristicas de la capa que se aplica arriba de la imagen del personaje tras descartarlo*/
+  filter: grayscale(100%);
+  cursor:not-allowed;
+}
+
+.pieza{  /*Caracteristicas de la pieza*/
+  cursor: grab;
+}
+
+.pregunta {  /*Caracteristicas de cada contenedor  de pruengunta*/
+    background-color: rgb(147, 85, 188);
+    border-radius: 27px;
+    box-shadow: inset 0 0 60px rgb(220, 159, 208);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /*Se responde con un clic*/
+    user-select: none;
+    transition: transform .15s, filter .15s;
+  }
+
+.pregunta:hover { /*Indica que la pregunta se puede presionar*/
+    transform: scale(1.03);
+    filter: brightness(1.12);
+  }
+
+.pregunta:active { transform: scale(0.98); }
+
+.pregunta:focus-visible { outline: 4px solid #fde68a; outline-offset: 3px; }
+
+.respondido{  /*Caracteristicas especiales de cada contenedor  de pruengunta si fue respodida*/
+background-color: rgb(25, 201, 255);
+        box-shadow: inset 0 0 60px rgb(13, 20, 207);
+}
+
+/* En el futuro...
+  .correcto{  //Caracteristicas especiales de cada contenedor de pruengunta si la respuesta es "Si"
+        background-color: rgb(92, 231, 152);
+        box-shadow: inset 0 0 60px rgb(23, 207, 13);
+  }
+
+.incorrecto{  //Caracteristicas especiales de cada contenedor de pruengunta si la respuesta es "No"
+         background-color: rgb(188, 85, 85);
+        box-shadow: inset 0 0 60px rgb(241, 17, 17);
+}
+*/ 
+
+/*Declaración por Id*/
+#cuadrilla{   /*Caracteristicas de la sección  'grilla de personajes'*/
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+#preguntas{  /*Caracteristicas de la sección  'preguntas'*/
+  display: grid;
+      gap: 20px;
+}
+/* --- HUD y modal de victoria (movido desde juego.php) --- */
+            /* --- HUD del jugador (parte superior) --- */
+            .hud-jugador {
+                position: fixed;
+                top: 10px;
+                right: 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 200;
+            }
+            .hud-jugador span {
+                font-family: Consolas, 'Courier New', monospace;
+                color: #fff;
+                font-size: 14px;
+                text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+                background: rgba(0,0,0,0.4);
+                padding: 5px 12px;
+                border-radius: 20px;
+            }
+            .hud-jugador a {
+                font-family: Consolas, 'Courier New', monospace;
+                font-size: 13px;
+                padding: 5px 12px;
+                border-radius: 20px;
+                text-decoration: none;
+                color: #fff;
+                background: rgba(0,0,0,0.4);
+                transition: background .2s;
+            }
+            .hud-jugador a:hover { background: rgba(0,0,0,0.6); }
+
+            /* --- Modal de victoria --- */
+            #modal-victoria {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.7);
+                backdrop-filter: blur(6px);
+                z-index: 999;
+                align-items: center;
+                justify-content: center;
+            }
+            #modal-victoria.activo { display: flex; }
+            .modal-box {
+                background: linear-gradient(135deg, #1a1a2e, #16213e);
+                border: 1px solid rgba(255,255,255,0.2);
+                border-radius: 20px;
+                padding: 40px 36px;
+                max-width: 420px;
+                width: 90%;
+                text-align: center;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+                animation: popIn .4s cubic-bezier(.34,1.56,.64,1);
+                color: #e2e8f0;
+            }
+            @keyframes popIn {
+                from { opacity:0; transform:scale(.6); }
+                to   { opacity:1; transform:scale(1); }
+            }
+            .modal-box h2 { font-size: 2rem; margin-bottom: 10px; }
+            .modal-box p  { font-size: 1rem; color: rgba(255,255,255,.65); margin-bottom: 24px; }
+            .modal-box .victorias-count {
+                font-size: 1.4rem;
+                color: #fde68a;
+                margin-bottom: 24px;
+                display: block;
+            }
+            .modal-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+            .modal-btns a, .modal-btns button {
+                padding: 10px 22px;
+                border-radius: 12px;
+                font-size: .95rem;
+                font-weight: 700;
+                cursor: pointer;
+                text-decoration: none;
+                border: none;
+                transition: transform .15s;
+            }
+            .modal-btns a:hover, .modal-btns button:hover { transform: translateY(-2px); }
+            .btn-reiniciar {
+                background: linear-gradient(135deg, #22c55e, #15803d);
+                color: #fff;
+            }
+            .btn-menu {
+                background: linear-gradient(135deg, #e6b840, #ca8a04);
+                color: #1a1a2e;
+            }
+            .btn-login-modal {
+                background: linear-gradient(135deg, #6366f1, #4338ca);
+                color: #fff;
+            }
+        
